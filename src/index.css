@@ -1,0 +1,127 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  body {
+    @apply overflow-hidden text-primary font-secondary bg-white;
+  }
+  .h1 {
+    @apply text-[54px] lg:text-[108px] font-primary font-bold capitalize leading-[120%] tracking-[-0.05em] mb-2;
+  }
+  .section {
+    @apply h-screen w-screen;
+  }
+  .btn {
+    @apply py-[18px] px-[50px] h-[66px] flex items-center justify-center text-base uppercase font-secondary font-semibold bg-primary text-white;
+  }
+  .img {
+    @apply max-w-full;
+  }
+}
+
+.nabla{
+  font-family: "Nabla", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "EDPT" 100,
+    "EHLT" 12;
+}
+
+.honk {
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "MORF" 15,
+    "SHLN" 50;
+}
+
+.contact{
+  font-size: 80px;
+  
+}
+
+.buttoncontact{
+  font-size: 30px;
+  padding-top: 2%;
+}
+
+
+
+.noto-color emoji-regular {
+  font-family: "Noto Color Emoji", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.biorhyme{
+  font-family: "BioRhyme", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  color: aliceblue;
+  font-style: normal;
+  margin-left: 20%;
+  padding-top: 2%;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.about{
+  font-family: "nabla", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  color: rgb(185, 111, 173);
+  font-style: normal;
+  font-size: 80px;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.text{
+  font-family: "BioRhyme", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  color: rgb(137, 003, 203);
+  font-style: normal;
+  margin-right: 15%;
+  font-size: 15px;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.nanum-pen{
+  font-family: "Nanum Pen Script", cursive;
+  font-weight: 400;
+  font-size: 30px;
+  font-style: normal;
+}
+
+
+
+.title{
+  font-family: "Nanum Pen Script", cursive;
+  font-weight: 400;
+  font-size: 70px;
+  font-style: normal;
+}
+
+
+.description{
+  font-family: "Nanum Pen Script", cursive;
+  font-weight: 400;
+  font-size: 25px;
+  font-style: normal;
+}
+.footer-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}

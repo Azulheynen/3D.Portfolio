@@ -1,0 +1,63 @@
+import { motion } from "framer-motion";
+import { FaFacebook, FaInstagram, FaTelegram, FaEnvelope } from "react-icons/fa";
+import './form.css';
+
+const socialMediaLinks = [
+  { icon: <FaFacebook />, link: "https://www.facebook.com/your-facebook-profile" },
+  { icon: <FaInstagram />, link: "https://www.instagram.com/your-instagram-profile" },
+  { icon: <FaTelegram />, link: "https://t.me/your-telegram-profile" },
+  { icon: <FaEnvelope />, link: "mailto:your-email@example.com" }
+];
+
+const Form = ({ setIsOpen, setName, setOpenToS }) => {
+  // Your existing code here   
+    const schema = yup.object().shape({
+        firstName: yup.string().required("First Name cannot be empty"),
+        lastName: yup.string().required("Last Name cannot be empty"),
+        email: yup
+            .string()
+            .email("Looks like this is not an email")
+            .required("Email cannot be empty"),
+    })
+    
+    const {register, handleSubmit, formState: {errors} , reset } = useForm({
+        resolver: yupResolver(schema)
+    });
+
+
+    const onSubmit = (data) => {
+        setName(data.firstName)
+        setIsOpen(true)
+        reset({
+            firstName: "",
+            lastName: "",
+            email: "",
+        })
+    }
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className='signup-form'>
+      {/* Your form fields */}
+      
+      {/* Social Media Icons */}
+      <div className="social-media-icons">
+        {socialMediaLinks.map((item, index) => (
+          <motion.a 
+            key={index}
+            href={item.link} 
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2 }}
+            className="social-media-icon"
+          >
+            {item.icon}
+          </motion.a>
+        ))}
+      </div>
+
+      <input type="submit" value="Send" />
+    </form>
+  );
+};
+
+export default Form;
